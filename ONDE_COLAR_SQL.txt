@@ -1,0 +1,101 @@
+═══════════════════════════════════════════════════════════════
+  🎯 ONDE COLAR O SQL - PASSO A PASSO COM IMAGENS
+═══════════════════════════════════════════════════════════════
+
+Você está aqui agora: ✅ Table Editor (vejo na sua tela)
+
+Precisa ir para: ➡️ SQL Editor
+
+
+📍 PASSO A PASSO:
+
+┌─────────────────────────────────────────┐
+│  OLHE O MENU LATERAL ESQUERDO           │
+│  (onde tem os ícones)                   │
+└─────────────────────────────────────────┘
+
+Você vai ver algo assim:
+
+🏠  (Home)
+📊  (Table Editor) ← VOCÊ ESTÁ AQUI AGORA
+</>  (SQL Editor)  ← CLIQUE AQUI! 👈👈👈
+🔐  (Authentication)
+📁  (Storage)
+⚙️   (Settings)
+
+O ícone </> pode aparecer como:
+- </>
+- [=]
+- Um símbolo de código
+
+Nome ao lado: "SQL Editor"
+
+
+═══════════════════════════════════════════════════════════════
+  DEPOIS DE CLICAR NO SQL EDITOR:
+═══════════════════════════════════════════════════════════════
+
+1️⃣ Vai abrir uma tela nova
+2️⃣ Vai ter um botão "+ New query" ou "New Query"
+3️⃣ Clique nele
+4️⃣ Vai abrir um editor de texto grande (tipo bloco de notas)
+5️⃣ Cole o código abaixo:
+
+
+═══════════════════════════════════════════════════════════════
+  CÓDIGO PARA COLAR (COPIE TUDO):
+═══════════════════════════════════════════════════════════════
+
+UPDATE auth.users
+SET email_confirmed_at = NOW(),
+    confirmed_at = NOW()
+WHERE email = 'paula@nutricionista.com';
+
+UPDATE nutricionistas
+SET nome = 'Paula do Amaral Santos',
+    crn = '08100732',
+    plano = 'profissional',
+    limite_pacientes = 200,
+    ativo = true,
+    data_expiracao = (NOW() + INTERVAL '1 year')
+WHERE id = (SELECT id FROM auth.users WHERE email = 'paula@nutricionista.com');
+
+SELECT u.email, n.nome, n.crn
+FROM auth.users u
+LEFT JOIN nutricionistas n ON n.id = u.id
+WHERE u.email = 'paula@nutricionista.com';
+
+
+═══════════════════════════════════════════════════════════════
+  DEPOIS DE COLAR:
+═══════════════════════════════════════════════════════════════
+
+6️⃣ Procure um botão "RUN" (geralmente verde ou azul)
+7️⃣ Clique nele
+8️⃣ Vai aparecer embaixo: "Success. Rows returned X"
+9️⃣ Vai mostrar uma tabela com:
+   - email: paula@nutricionista.com
+   - nome: Paula do Amaral Santos
+   - crn: 08100732
+
+🔟 Se aparecer isso, PRONTO! ✅
+
+Me confirme aqui: "Executei o SQL e apareceu os dados da Paula"
+
+
+═══════════════════════════════════════════════════════════════
+  SE NÃO ENCONTRAR O SQL EDITOR:
+═══════════════════════════════════════════════════════════════
+
+Alternativa: Use o atalho de teclado
+
+Na página do Supabase, pressione: Ctrl + K (ou Cmd + K no Mac)
+
+Vai abrir uma barra de busca.
+Digite: "SQL Editor"
+Clique no resultado que aparecer.
+
+
+═══════════════════════════════════════════════════════════════
+
+Dúvidas? Tire um print da sua tela do Supabase que eu te ajudo!

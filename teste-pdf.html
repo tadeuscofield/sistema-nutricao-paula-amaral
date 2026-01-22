@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.3/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <h1>Teste de Exportação PDF</h1>
+    <button onclick="gerarPDF()">Gerar PDF Teste</button>
+
+    <script>
+        function gerarPDF() {
+            try {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+
+                // Cabeçalho
+                doc.setFillColor(20, 184, 166);
+                doc.rect(0, 0, 210, 40, 'F');
+
+                doc.setTextColor(255, 255, 255);
+                doc.setFontSize(22);
+                doc.text('TESTE PDF', 105, 15, { align: 'center' });
+
+                doc.setFontSize(12);
+                doc.text('Paula Amaral', 105, 25, { align: 'center' });
+
+                // Conteúdo
+                doc.setTextColor(0, 0, 0);
+                doc.setFontSize(14);
+                doc.text('Teste de conteúdo', 20, 50);
+
+                // Tabela
+                doc.autoTable({
+                    startY: 60,
+                    head: [['Coluna 1', 'Coluna 2', 'Coluna 3']],
+                    body: [
+                        ['Linha 1', 'Dados 1', 'Info 1'],
+                        ['Linha 2', 'Dados 2', 'Info 2']
+                    ]
+                });
+
+                doc.save('teste.pdf');
+                alert('PDF gerado com sucesso!');
+            } catch (error) {
+                console.error('Erro:', error);
+                alert('Erro ao gerar PDF: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>

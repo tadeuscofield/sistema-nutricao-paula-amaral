@@ -1,0 +1,31 @@
+🚀 NOVA URL DO SISTEMA - DEPLOY FORÇADO
+
+========================================
+
+✅ NOVA URL (ACESSE ESTA):
+https://sistema-nutricao-paula-amaral-7fsiq018k.vercel.app
+
+========================================
+
+LOGIN:
+Email: paula@nutricionista.com
+Senha: neco1910
+
+========================================
+
+⚠️ IMPORTANTE:
+
+1. APAGUE o cache do navegador (Ctrl+Shift+Del)
+2. Feche TODAS as abas do sistema
+3. Acesse a URL nova acima
+4. Faça login
+5. Teste criar paciente
+
+========================================
+
+Se AINDA der erro, me envie SCREENSHOT mostrando:
+- Mensagem de erro
+- Console do navegador (F12 → Console)
+- URL que está acessando
+
+========================================
